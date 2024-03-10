@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Projesi</title>
+    <style>
+        /*Sayfalada boşluk varsa kapatır*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /*slider kısımların temeli atıldı sayfanın sağa gitmemesi ve boyutu ayarlandı*/
+        .slider {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 50vh;
+            overflow-x: hidden;
+        }
+        /*slider'ın içinde yer alan slide tagının boyutu animasyon adını zamanı tipi ve tekrarlamaları yapıldı*/
+        .slide {
+            animation: Slider 15s linear infinite;
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        /*slider'ın resimlerin boyutu ve tipi ayarlandı*/
+        img{
+            width: 1024px;
+            height: 100%;
+        }
+        /*slider'ın animasyon yönü ayarlandı*/
+        @keyframes Slider {
+
+            0%{
+                transform: translateX(-100%);
+            }
+            100%{
+                transform: translateX(0%);
+            } 
+        }
+        .search{
+            position: absolute;
+            transform: translate(400%, 700%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="slider">
+        <!--Slide tagından iki tane olma sebebi resimlerin kesilmemesi içindri bir resim eklendiğinde diğer slide tagınada eklenmesi gerekir-->
+        <div class="slide">
+            <img src="indir.jpeg">
+            <img src="naber.jpg">
+        </div>
+        <div class="slide">
+            <img src="indir.jpeg">
+            <img src="naber.jpg">
+        </div>
+    </div>
+</body>
+
+</html>
